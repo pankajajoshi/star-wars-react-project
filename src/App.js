@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./style.css";
+import Main from "./components/Main";
+import Planets from "./components/Planets";
+import Starships from "./components/Starships";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [selectedComponent, setSelectedComponent] = useState("Main");
+
+	return (
+		<>
+			<nav>
+				<button onClick={() => setSelectedComponent("Main")}>Main Page</button>
+				<button onClick={() => setSelectedComponent("Planets")}>Planets</button>
+				<button onClick={() => setSelectedComponent("Starships")}>
+					Starships
+				</button>
+			
+			</nav>
+			<div id="ctn-main">
+				{selectedComponent === "Main" && <Main />}
+				{selectedComponent === "Planets" && <Planets />}
+				{selectedComponent === "Starships" && <Starships />}
+				
+			</div>
+		</>
+	);
 }
 
 export default App;
