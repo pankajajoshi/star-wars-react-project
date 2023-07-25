@@ -42,17 +42,25 @@ function Starships() {
 		console.log(Starship);
 
 		return (
-			<div className="card card-starships">
-				<h2 key={Starship.name}>{Starship.name}</h2>
-				{/* <p>Manufacturer: {Starship.manufacturer}</p>
+			// <div className="card card-starships">
+                <div class="flip-card">
+                 <div class="flip-card-inner">
+                <div class="flip-card-front">
+                <h2 key={Starship.name}>{Starship.name}</h2>
+                </div>
+                <div class="flip-card-back">
+				<p>Manufacturer: {Starship.manufacturer}</p>
 				<p>Cost in credits: {Starship.cost_in_credits}</p>
 				<p>Length: {Starship.length}</p>
 				<p>Max atmosphering speed: {Starship.max_atmosphering_speed}</p>
 				<p>Crew: {Starship.crew}</p>
 				<p>Passengers: {Starship.passengers}</p>
 				<p>Cargo capacity: {Starship.cargo_capacity}</p>
-				<br /> */}
-			</div>
+				<br />
+                </div>
+                </div>
+                </div>
+                // </div>
 		);
 	});
 
@@ -72,7 +80,7 @@ function Starships() {
 				Next Page⏩
 			</button>
 
-			<main>{allStarshipsOnPage}</main>
+			<main className="flip-card-main">{allStarshipsOnPage}</main>
 		</div>
 	);
 
